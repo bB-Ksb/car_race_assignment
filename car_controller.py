@@ -75,9 +75,12 @@ class RaceController:
                 car.move()
                 print( car )
 
-    @staticmethod
-    def race():
+    # @staticmethod
+    @property
+    def race(self):
         valid_car_name = get_valid_car_names()
+        car_name: str = Car
+        car_name = Car.name(self)
         """
         자동차 게임 진행 시키는 메서드
         :return: 승리 조건을 충족한 자동차 이름(들) 돌려줌
@@ -94,7 +97,7 @@ class RaceController:
             RaceController.valid_car_movement( cars, how_much_car_play )
 
             max_distance = max( car.distance for car in cars )
-            winner_cars = [car.name for car in cars if car.distance == max_distance]
+            winner_cars = [car_name for car in cars if car.distance == max_distance]
             return winner_cars
 
         except TypeError:
