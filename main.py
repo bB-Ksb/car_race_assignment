@@ -1,12 +1,12 @@
 from car_view import winner_car_print, RaceView
-from car_error_classes import LowMovementError
+from car_error_classes import LowMovementError, IllegalArgumentException
 
 
 def main():
     try:
         winner_car_print()
 
-    except LowMovementError:
+    except (LowMovementError(), IllegalArgumentException()):
         RaceView.display_message(f"[ERROR]")
 
 
