@@ -56,8 +56,6 @@ def each_invalid_car_names(invalid_names):
 
 
 class RaceController:
-    how_much_car_play: int
-
     def __init__(self):
         pass
 
@@ -75,8 +73,9 @@ class RaceController:
                 car.move()
                 print( car )
 
-    @staticmethod
-    def race():
+    # @staticmethod
+    @property
+    def race(self):
         valid_car_name = get_valid_car_names()
         """
         자동차 게임 진행 시키는 메서드

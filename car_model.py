@@ -1,12 +1,13 @@
 import random
 
 class Car:
-    __name: str
-    __distance: int = 0
-
     def __init__(self, name):
-        self.name = name
-        self.distance = 0
+        self.__name: str = name
+        self.distance:int = 0
+
+    @property
+    def name(self):
+        return self.__name
 
     def move(self):
         random_value = random.randint(0, 9)
@@ -14,4 +15,4 @@ class Car:
             self.distance += 1
 
     def __str__(self):
-        return f"{self.name}: {'-' * self.distance}"
+        return f"{self.__name}: {'-' * self.distance}"
