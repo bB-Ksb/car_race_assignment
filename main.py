@@ -1,13 +1,12 @@
-from car_controller import winner_car_print
-from car_error_classes import ErrorClass
-from car_view import RaceView
+from car_view import winner_car_print, RaceView
+from car_error_classes import LowMovementError
 
 
 def main():
     try:
         winner_car_print()
 
-    except ErrorClass.LowMovementError:
+    except LowMovementError:
         RaceView.display_message(f"[ERROR]")
 
 
