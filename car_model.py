@@ -1,9 +1,12 @@
 import random
 
 class Car:
+    name: str
+    distance: int
+
     def __init__(self, name):
-        self.__name: str = name
-        self.distance:int = 0
+        self.__name = name
+        self.distance = 0
 
     @property
     def name(self):
